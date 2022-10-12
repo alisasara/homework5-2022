@@ -1,0 +1,155 @@
+
+
+/* default view */
+
+/* animating logo */
+
+#logo{
+    width: 475px;
+    animation: hw5_move 5s;
+}
+
+@keyframes hw5_move{
+    from{width: 25px;}
+    to{width: 475px;}
+}
+/* editing the body element */
+body{
+    font-family: 'Poppins', serif;
+    background-color: #f1f1f1;
+    background-image:url("../images/concrete_seamless.png");
+}
+/* edit header tag */
+header{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* edit the nav */
+.nav_links{
+    display: flex;
+    align-items: flex-start;  
+}
+.nav_links a:visited{
+    color: blue
+} 
+/* edit the card class */
+.card > header{
+    background: #288088;
+    border: solid 2px #45ADAD; 
+    border-radius: 50px 50px 0px 0px;
+}
+/* edit pricing class */
+.pricing{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    display:flex;
+    flex-basis: 450px;
+    flex-direction: column;
+}
+/* edit gallergy class */
+.gallery img{
+    border: solid 10px#50C7C7;
+    margin: 10px 10px 10px 10px; 
+    width: 300px;
+}
+.gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+/* screen larger than 900px */
+
+@media all and (min-width: 900px){
+    /* edit the header tag */
+    header{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    /* edit the nav */
+    .nav_links{
+        flex-direction: row;
+    }
+    head{
+      position: fixed;  
+    }
+    /* edit pricing class */
+    .pricing{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    /* edit class card */
+    .card{
+        flex-basis: 275px; 
+    }
+    /* edit first header in body */
+    body > header{
+        width: 100%;
+        position: sticky;
+        z-index: 1; 
+        top: 0;
+    }
+}
+        
+/* reduced motion */
+
+@media (prefers-reduced-motion: reduce){
+    /* remove animation */
+    #logo{
+        animation: none;
+    }
+}
+
+/* print view */
+
+@media print{
+    /*  change font*/
+    body{
+        font-family: Arial, Helvetica;
+    }
+    /* remove background image */
+    div{
+        background-image: none;
+    }
+   /* edit nav */
+    .nav_links, nav {
+        display: flex; 
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+/* edit pricing card */
+    .pricing{
+        display: flex;
+        flex-wrap:nowrap;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    /* edit class card */
+    .card{
+        border: 2px solid #45ADAD;
+        display:flex;
+        flex-basis: 325px;
+    }
+    /* made gallergy not visible*/
+    .gallery, #gallery{
+        display: none;
+    }
+    .card ul li:nth-child(2)::after{
+        content: "\1F44D";
+    }  
+ }
